@@ -16,7 +16,7 @@
     {
         "id": "2b626ddf.7bdac2",
         "type": "ui_group",
-        "name": "Chart [temperatuur regeling]",
+        "name": "Chart [temperatuur]",
         "tab": "c97bab7.3ab6d58",
         "order": 1,
         "disp": true,
@@ -458,6 +458,7 @@
             "#c5b0d5"
         ],
         "outputs": 1,
+        "useDifferentColor": false,
         "x": 1080,
         "y": 320,
         "wires": [
