@@ -1,1 +1,726 @@
-[]
+[
+    {
+        "id": "f42bd62bce7dce03",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "99f1e308.18923",
+        "type": "tab",
+        "label": "OPC_pers",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "420b0bc3.cfe194",
+        "type": "tab",
+        "label": "MQTT_temperature",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2b626ddf.7bdac2",
+        "type": "ui_group",
+        "name": "Chart [temperatuur regeling]",
+        "tab": "c97bab7.3ab6d58",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false
+    },
+    {
+        "id": "c97bab7.3ab6d58",
+        "type": "ui_tab",
+        "name": "WAGO Nederland B.V. - Support",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ae5ae5b.15efe18",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#00ce00",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#008000",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#00ce00",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#00ce00",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bff1b",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#00ce00",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial Black,Arial Black,Gadget,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "WAGO Dashboard [NodeRed]",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "845dbe2b.2e3da",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://192.168.178.216:4840/",
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "securityPolicy": "None",
+        "securityMode": "SIGNANDENCRYPT",
+        "name": "PFC200",
+        "showErrors": false,
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "endpointMustExist": false,
+        "autoSelectRightEndpoint": false,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": "10"
+    },
+    {
+        "id": "3fbf798c.34f3a6",
+        "type": "mqtt-broker",
+        "name": "Local_broker",
+        "broker": "192.168.178.216",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9f528d97a675c6cd",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "c97bab7.3ab6d58",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "17810e41.f5bc32",
+        "type": "OPCUA-IIoT-Browser",
+        "z": "99f1e308.18923",
+        "connector": "845dbe2b.2e3da",
+        "nodeId": "ns=4;s=|var|WAGO 750-8212 PFC200 G2 2ETH RS Tele T.Application.CloudValues",
+        "name": "Browser",
+        "justValue": false,
+        "sendNodesToRead": true,
+        "sendNodesToListener": false,
+        "sendNodesToBrowser": false,
+        "multipleOutputs": false,
+        "recursiveBrowse": false,
+        "recursiveDepth": 1,
+        "delayPerMessage": 0.2,
+        "showStatusActivities": false,
+        "showErrors": false,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "46f4cb99.bb9344"
+            ]
+        ]
+    },
+    {
+        "id": "e6f35ca6.8a5a6",
+        "type": "OPCUA-IIoT-Inject",
+        "z": "99f1e308.18923",
+        "injectType": "read",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "startDelay": "",
+        "name": "",
+        "addressSpaceItems": [],
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "17810e41.f5bc32"
+            ]
+        ]
+    },
+    {
+        "id": "f1ac85a8.e98338",
+        "type": "mqtt in",
+        "z": "420b0bc3.cfe194",
+        "name": "Local_Broker",
+        "topic": "#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "3fbf798c.34f3a6",
+        "nl": false,
+        "rap": false,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "47935d5c.c28104"
+            ]
+        ]
+    },
+    {
+        "id": "47935d5c.c28104",
+        "type": "json",
+        "z": "420b0bc3.cfe194",
+        "name": "Parser",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "3d9c5722.bcaed8"
+            ]
+        ]
+    },
+    {
+        "id": "3d9c5722.bcaed8",
+        "type": "function",
+        "z": "420b0bc3.cfe194",
+        "name": "MQTT split",
+        "func": "msg_o = {\n             pers_temp1 : msg.payload.Temperature_1,\n             pers_temp2 : msg.payload.Temperature_2,\n             pers_temp3 : msg.payload.Temperature_3\n            };\n\nreturn [msg_o]\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "29531260.12e60e",
+                "854f0c13.5fefd",
+                "f9b832ab.4f3d6"
+            ]
+        ]
+    },
+    {
+        "id": "29531260.12e60e",
+        "type": "change",
+        "z": "420b0bc3.cfe194",
+        "name": "Pers 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "pers_temp_1[⁰C]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers_temp1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp2",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp3",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 240,
+        "wires": [
+            [
+                "63a83ed.cd50ec",
+                "c498ed81.17c7"
+            ]
+        ]
+    },
+    {
+        "id": "854f0c13.5fefd",
+        "type": "change",
+        "z": "420b0bc3.cfe194",
+        "name": "Pers 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "pers_temp_2[⁰C]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers_temp2",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp1",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp3",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 320,
+        "wires": [
+            [
+                "63a83ed.cd50ec"
+            ]
+        ]
+    },
+    {
+        "id": "f9b832ab.4f3d6",
+        "type": "change",
+        "z": "420b0bc3.cfe194",
+        "name": "Pers 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "pers_temp_3[⁰C]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers_temp3",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp2",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers_temp1",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 400,
+        "wires": [
+            [
+                "63a83ed.cd50ec"
+            ]
+        ]
+    },
+    {
+        "id": "63a83ed.cd50ec",
+        "type": "ui_chart",
+        "z": "420b0bc3.cfe194",
+        "name": "",
+        "group": "2b626ddf.7bdac2",
+        "order": 0,
+        "width": "14",
+        "height": "10",
+        "label": "Niveau",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c498ed81.17c7",
+        "type": "debug",
+        "z": "420b0bc3.cfe194",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1050,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "dcd4afd2.05bd7",
+        "type": "debug",
+        "z": "99f1e308.18923",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2b0eb64a.ee6f1a",
+        "type": "function",
+        "z": "99f1e308.18923",
+        "name": "Split",
+        "func": "var i = 0;\nvar pers = [];\n\nfor (i = 0; i <= 2; i++)\n    {\n    pers[i] = msg.payload.value[i].value;\n    }\n\nvar msg_o = {\n             pers1 : pers[0],\n             pers2 : pers[1],\n             pers3 : pers[2]\n            };\n\nreturn [msg_o]\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "dcd4afd2.05bd7",
+                "831007c2.eee038",
+                "b62afbd1.630458",
+                "c33320e.e7c89e"
+            ]
+        ]
+    },
+    {
+        "id": "831007c2.eee038",
+        "type": "change",
+        "z": "99f1e308.18923",
+        "name": "Silo 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Pers_druk_1[%]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers2",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers3",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 240,
+        "wires": [
+            [
+                "dcd4afd2.05bd7",
+                "5b0700d1.66912"
+            ]
+        ]
+    },
+    {
+        "id": "5b0700d1.66912",
+        "type": "ui_chart",
+        "z": "99f1e308.18923",
+        "name": "",
+        "group": "2b626ddf.7bdac2",
+        "order": 0,
+        "width": "14",
+        "height": "10",
+        "label": "Niveau",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46f4cb99.bb9344",
+        "type": "OPCUA-IIoT-Read",
+        "z": "99f1e308.18923",
+        "attributeId": "0",
+        "maxAge": 1,
+        "depth": 1,
+        "connector": "845dbe2b.2e3da",
+        "name": "Read",
+        "justValue": true,
+        "showStatusActivities": false,
+        "showErrors": false,
+        "parseStrings": false,
+        "historyDays": 1,
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "2b0eb64a.ee6f1a",
+                "dcd4afd2.05bd7"
+            ]
+        ]
+    },
+    {
+        "id": "b62afbd1.630458",
+        "type": "change",
+        "z": "99f1e308.18923",
+        "name": "Silo 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Pers_druk_2[%]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers2",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers1",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "silo3",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 320,
+        "wires": [
+            [
+                "5b0700d1.66912"
+            ]
+        ]
+    },
+    {
+        "id": "c33320e.e7c89e",
+        "type": "change",
+        "z": "99f1e308.18923",
+        "name": "Silo 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Pers_druk_3[%]",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "pers3",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers2",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "pers1",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 400,
+        "wires": [
+            [
+                "5b0700d1.66912"
+            ]
+        ]
+    }
+]
