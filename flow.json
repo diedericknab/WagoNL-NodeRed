@@ -183,11 +183,12 @@
     {
         "id": "9f528d97a675c6cd",
         "type": "ui_group",
-        "name": "Group 2",
+        "name": "Chart [druk]",
         "tab": "c97bab7.3ab6d58",
         "order": 2,
         "disp": true,
-        "width": 6
+        "width": "14",
+        "collapse": false
     },
     {
         "id": "17810e41.f5bc32",
