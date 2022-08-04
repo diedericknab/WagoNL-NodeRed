@@ -1,12 +1,5 @@
 [
     {
-        "id": "f42bd62bce7dce03",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "99f1e308.18923",
         "type": "tab",
         "label": "OPC_pers",
